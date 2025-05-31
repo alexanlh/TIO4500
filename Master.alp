@@ -187,7 +187,7 @@ readCSV();]]></StartupCode>
 				<Variable Class="Parameter">
 					<Id>1732379104433</Id>
 					<Name><![CDATA[earlyDischargeCondition]]></Name>
-					<X>-630</X><Y>-110</Y>
+					<X>-630</X><Y>-120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -671,7 +671,7 @@ readCSV();]]></StartupCode>
 				<Variable Class="Parameter">
 					<Id>1746616003412</Id>
 					<Name><![CDATA[DoDistribution]]></Name>
-					<X>-800</X><Y>-80</Y>
+					<X>-300</X><Y>-140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -685,6 +685,150 @@ readCSV();]]></StartupCode>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1746616003410</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748613480745</Id>
+					<Name><![CDATA[totalHospitalAdmissions]]></Name>
+					<X>60</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748613480743</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748613491942</Id>
+					<Name><![CDATA[AverageHospitalAdmissions]]></Name>
+					<X>60</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748613491940</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748614367474</Id>
+					<Name><![CDATA[logtodaystranfers]]></Name>
+					<X>250</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748614367472</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748638213742</Id>
+					<Name><![CDATA[ActivateRettHjem]]></Name>
+					<X>-450</X><Y>-140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[true]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748638213740</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748638295997</Id>
+					<Name><![CDATA[RettHjemMultiplier]]></Name>
+					<X>-450</X><Y>-110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1.5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748638295995</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748638973929</Id>
+					<Name><![CDATA[HalfStaytimeNursinghome]]></Name>
+					<X>-180</X><Y>-140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748638973927</Id>
 							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2066,6 +2210,7 @@ SimulationsOutputs.add(kpi);]]></Body>
     AverageStayLong = 0.0;
     averageWaitListTime = 0.0;
     simulations++;
+    totalHospitalAdmissions=0;
 
     // Reinitialize departments, beds, and CSV reading
     initializeDepartments();
@@ -2174,10 +2319,12 @@ trace(
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[int numberToGenerate = (int) generateTriangular(1, 2, 5); // Bruk ønsket fordeling
+					<Body><![CDATA[int numberToGenerate = (int) generateTriangular(1, 2, 6); // Bruk ønsket fordeling
 
     for (int i = 0; i < numberToGenerate; i++) {
         Patient p = new Patient();
+        p.RettHjem=ActivateRettHjem;
+        p.fasterNursinghome=HalfStaytimeNursinghome;
         p.patientID = allPatients.size();
         p.assignInitialCFS();
         allPatients.add(p);
@@ -2194,23 +2341,72 @@ trace(
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// 1. Trekker antall som skal legges inn i dag
-    int numberToAdmit = (int) generateTriangular(1, 8, 26);
-    numberToAdmit = Math.min(numberToAdmit, homePatients.size()); // Ikke flere enn vi har
-
-    for (int i = 0; i < numberToAdmit; i++) {
-        // 2. Trekk tilfeldig pasient fra homePatients
-        int index = (int)(Math.random() * homePatients.size());
-        Patient patient = homePatients.get(index);
-
-        homePatients.remove(patient);
-        hospitalPatients.add(patient);
-
-        // 3. Trekker varighet på oppholdet (kortere, lokal triangular)
-        int stay = (int) Math.round(generateTriangular(1.0, 3.0, 10.0));
-        patient.hospitalDaysLeft = stay;
+					<Body><![CDATA[// Multiplier to boost Poisson mean values (tune this as needed)
+    double lambdaMultiplier = 1.2;
+    double readmissionMultiplier=1;
+    
+    if (ActivateRettHjem){
+    readmissionMultiplier=RettHjemMultiplier;
     }
-]]></Body>
+
+    // Poisson lambdas from empirical data (avg admissions per day)
+    double[][] lambdas = {
+        {0.13, 0.33}, // CFS 1: {readmission, new}
+        {0.44, 0.81}, // CFS 2
+        {0.62, 1.21}, // CFS 3
+        {0.68, 1.22}, // CFS 4
+        {0.46, 0.88}, // CFS 5
+        {0.23, 0.40}, // CFS 6
+        {0.09, 0.16}, // CFS 7
+        {0.03, 0.07}, // CFS 8
+        {0.01, 0.03}  // CFS 9
+    };
+
+    int totalAdmittedToday = 0;
+
+    // Loop through CFS 1–9
+    for (int cfs = 1; cfs <= 9; cfs++) {
+        double readmissionLambda = lambdas[cfs - 1][0] * lambdaMultiplier * readmissionMultiplier ;
+        double newAdmissionLambda = lambdas[cfs - 1][1] * lambdaMultiplier;
+
+        int readmissionsToDo = drawPoisson(readmissionLambda);
+        int newAdmissionsToDo = drawPoisson(newAdmissionLambda);
+
+        // Filter all home patients of this CFS
+        ArrayList<Patient> eligible = new ArrayList<>();
+        for (Patient p : homePatients) {
+            if (p.CFS == cfs) eligible.add(p);
+        }
+
+        // Shuffle for random selection
+        Collections.shuffle(eligible);
+
+        int admitted = 0;
+
+        // Process readmissions
+        for (int i = 0; i < readmissionsToDo && admitted < eligible.size(); i++, admitted++) {
+            Patient p = eligible.get(admitted);
+            p.hospitalStays++;
+            p.HomeReadmissions30Days++;
+
+            admitPatientHomeToHosp(p);
+            totalAdmittedToday++;
+        }
+
+        // Process new admissions
+        for (int i = 0; i < newAdmissionsToDo && admitted < eligible.size(); i++, admitted++) {
+            Patient p = eligible.get(admitted);
+            p.hospitalStays++;
+
+            admitPatientHomeToHosp(p);
+            totalAdmittedToday++;
+        }
+    }
+    totalHospitalAdmissions += totalAdmittedToday;
+    logtodaystranfers=totalAdmittedToday;
+    if (simulatedDays>0){
+	    AverageHospitalAdmissions = totalHospitalAdmissions/simulatedDays;
+    }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -2226,8 +2422,9 @@ trace(
 
     for (Patient patient : hospitalPatients) {
         patient.hospitalDaysLeft--;
+
         if (patient.hospitalDaysLeft <= 0) {
-            patient.assignPostHospitalCFS();
+            patient.assignPostHospitalCFS(); // update CFS after hospital stay
             patientsToDischarge.add(patient);
         }
     }
@@ -2254,8 +2451,8 @@ trace(
                 waitingList.add(patient);
                 break;
 
-            case "nursinghome":
-                nursingHomePatients.add(patient);
+            default:
+                System.out.println("Warning: Unexpected post-hospital exit: " + exit + " for patient ID " + patient.patientID);
                 break;
         }
     }]]></Body>
@@ -2305,7 +2502,7 @@ trace(
 						<Name><![CDATA[cfs]]></Name>
 						<Type><![CDATA[int]]></Type>
 					</Parameter>
-					<Body><![CDATA[return (double) allPatients.stream()
+					<Body><![CDATA[return (double) homePatients.stream()
         .filter(p -> !p.isDead && p.CFS == cfs)
         .count();]]></Body>
 				</Function>
@@ -2330,31 +2527,31 @@ trace(
 
     switch (patient.CFS) {
         case 1:
-            pHome = 0.931; pWaitlist = 0.059; pDeath = 0.010;
+            pHome = 0.831; pWaitlist = 0.159; pDeath = 0.010;
             break;
         case 2:
-            pHome = 0.899; pWaitlist = 0.087; pDeath = 0.012;
+            pHome = 0.799; pWaitlist = 0.187; pDeath = 0.012;
             break;
         case 3:
-            pHome = 0.769; pWaitlist = 0.212; pDeath = 0.018;
+            pHome = 0.669; pWaitlist = 0.312; pDeath = 0.018;
             break;
         case 4:
-            pHome = 0.669; pWaitlist = 0.303; pDeath = 0.026;
+            pHome = 0.569; pWaitlist = 0.403; pDeath = 0.026;
             break;
         case 5:
-            pHome = 0.587; pWaitlist = 0.378; pDeath = 0.035;
+            pHome = 0.487; pWaitlist = 0.478; pDeath = 0.035;
             break;
         case 6:
-            pHome = 0.605; pWaitlist = 0.353; pDeath = 0.042;
+            pHome = 0.305; pWaitlist = 0.453; pDeath = 0.042;
             break;
         case 7:
-            pHome = 0.578; pWaitlist = 0.366; pDeath = 0.056;
+            pHome = 0.278; pWaitlist = 0.466; pDeath = 0.056;
             break;
         case 8:
-            pHome = 0.771; pWaitlist = 0.208; pDeath = 0.022;
+            pHome = 0.40; pWaitlist = 0.478; pDeath = 0.022;
             break;
         case 9:
-            pHome = 0.691; pWaitlist = 0.218; pDeath = 0.091;
+            pHome = 0.30; pWaitlist = 0.609; pDeath = 0.091;
             break;
         default:
             return "home";
@@ -2377,6 +2574,8 @@ trace(
 					<Body><![CDATA[int numberToGenerate = 1900; // 
     for (int i = 0; i < numberToGenerate; i++) {
         Patient p = new Patient();
+        p.RettHjem=ActivateRettHjem;
+        p.fasterNursinghome=HalfStaytimeNursinghome;
         p.patientID = allPatients.size(); // Enkelt ID-system
         p.assignInitialCFS();
         allPatients.add(p);
@@ -2432,6 +2631,51 @@ trace(
 
     // Also clear the task list on the patient
     patient.patientTasks.clear();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1748612936155</Id>
+					<Name><![CDATA[admitPatientHomeToHosp]]></Name>
+					<X>-360</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[p]]></Name>
+						<Type><![CDATA[Patient]]></Type>
+					</Parameter>
+					<Body><![CDATA[homePatients.remove(p);
+    hospitalPatients.add(p);
+
+    int stay = (int) Math.round(generateTriangular(1.0, 3.0, 10.0));
+    p.hospitalDaysLeft = stay;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1748613017223</Id>
+					<Name><![CDATA[drawPoisson]]></Name>
+					<X>-360</X><Y>490</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[lambda]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[double L = Math.exp(-lambda);
+    double p = 1.0;
+    int k = 0;
+
+    do {
+        k++;
+        p *= Math.random();
+    } while (p > L);
+
+    return k - 1;]]></Body>
 				</Function>
 			</Functions>
 			<Connectivity>
@@ -2654,6 +2898,15 @@ trace(
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[rehospitalizationFromOyaDay]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[HomeReadmissions30Days]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[RettHjem]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[fasterNursinghome]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -5255,6 +5508,78 @@ trace(
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748613426911</Id>
+					<Name><![CDATA[HomeReadmissions30Days]]></Name>
+					<X>330</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748613426909</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748638604081</Id>
+					<Name><![CDATA[RettHjem]]></Name>
+					<X>160</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748638604079</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1748639010043</Id>
+					<Name><![CDATA[fasterNursinghome]]></Name>
+					<X>160</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1748639010041</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1732176213266</Id>
 					<Name><![CDATA[patientTasks]]></Name>
@@ -5342,15 +5667,13 @@ trace(
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[double rand = Math.random();
-if (rand < 0.01) return 1;
-if (rand < 0.06) return 2;
-if (rand < 0.17) return 3;
-if (rand < 0.39) return 4;
-if (rand < 0.47) return 5;
-if (rand < 0.79) return 6;
-if (rand < 0.99) return 7;
-if (rand < 0.995) return 8;
-return 9;]]></Body>
+
+if (rand < 0.06) return 1;         // 6%
+if (rand < 0.33) return 2;         // 27% (0.06 + 0.27)
+if (rand < 0.63) return 3;         // 32% (0.33 + 0.32)
+if (rand < 0.88) return 4;         // 25% (0.65 + 0.25)
+if (rand < 0.93) return 5;         // 5%  (0.90 + 0.05)
+return 6;                          // 5%  (remaining)              // 5%]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -5362,42 +5685,57 @@ return 9;]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[deathDay = -1;
-rehospitalizationFromOyaDay = -1;
+					<Body><![CDATA[  deathDay = -1;
+    rehospitalizationFromOyaDay = -1;
 
-    // Trekker neste steg
+    // Draw next step
     String exit = getOyaExit();
 
-    // Kategori og varighet
-    if (exit.equals("nursinghome")) {
+    // Set category first
+    if (exit.equals("nursinghome") || exit.equals("long_death")) {
         category = "Long";
+        if(fasterNursinghome){
+        MinimumLengthOfStay = generateTriangular(25, 33, 45);
+        safeStay = MinimumLengthOfStay;
+        }
+        else{
         MinimumLengthOfStay = generateTriangular(51, 66, 89);
         safeStay = MinimumLengthOfStay;
+        }
     } else {
-        boolean isShort = Math.random() < 0.5;
-        if (isShort) {
-            category = "Short";
+        if (CFS > 7) {
+            category = "Normal";
+        } else {
+            category = Math.random() < 0.5 ? "Short" : "Normal";
+        }
+
+        if (category.equals("Short")) {
+        	if(RettHjem){
+        	MinimumLengthOfStay = generateTriangular(1, 2, 3);
+            safeStay = 7;
+        	}
+        	else {
             MinimumLengthOfStay = generateTriangular(7, 9, 11);
             safeStay = 7;
+            }
         } else {
-            category = "Normal";
             MinimumLengthOfStay = generateTriangular(14, 17, 30);
             safeStay = 14;
         }
     }
 
-    // Eventuelt død
-    if (exit.equals("death")) {
+    // Death day logic
+    if (exit.equals("death") || exit.equals("long_death")) {
         deathDay = MinimumLengthOfStay;
         MinimumLengthOfStay++;
-        
+        safeStay=MinimumLengthOfStay;
     }
 
-    // Eventuelt reinnleggelse
+    // Hospitalization logic
     if (exit.equals("hospital")) {
-        //rehospitalizationFromOyaDay = (int)(Math.random() * MinimumLengthOfStay);
         rehospitalizationFromOyaDay = MinimumLengthOfStay;
         MinimumLengthOfStay++;
+        safeStay=MinimumLengthOfStay;
     }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -5422,17 +5760,83 @@ rehospitalizationFromOyaDay = -1;
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (CFS < 9) {
-        double roll = Math.random();
-        if (roll < 0.5) {
-            CFS = CFS; // no change
-        } else if (roll < 0.90) {
-            CFS += 1;
-        } else {
-            CFS += 2;
+					<Body><![CDATA[/*int oldCFS = CFS;
+
+if (CFS <= 6) {
+    // Empirical transition matrix (CFS 1–6 = index 0–5)
+    double[][] transitionMatrix = {
+        {0.071, 0.375, 0.286, 0.214, 0.036, 0.018, 0.0,   0.0,   0.0}, // From CFS 1
+        {0.030, 0.269, 0.398, 0.234, 0.040, 0.025, 0.005, 0.0,   0.0}, // From CFS 2
+        {0.003, 0.028, 0.380, 0.359, 0.166, 0.049, 0.009, 0.003, 0.003}, // From CFS 3
+        {0.000, 0.014, 0.085, 0.450, 0.354, 0.076, 0.020, 0.000, 0.000}, // From CFS 4
+        {0.000, 0.004, 0.036, 0.105, 0.524, 0.278, 0.048, 0.004, 0.000}, // From CFS 5
+        {0.000, 0.010, 0.019, 0.029, 0.146, 0.515, 0.223, 0.058, 0.000}  // From CFS 6
+    };
+
+    double[] weights = transitionMatrix[CFS - 1]; // 0-based index
+    double rand = Math.random();
+    double cumulative = 0.0;
+
+    for (int i = 0; i < weights.length; i++) {
+        cumulative += weights[i];
+        if (rand <= cumulative) {
+            CFS = i + 1; // Adjust back to CFS scale (1-indexed)
+            break;
         }
-        CFS = Math.min(CFS, 9);
-    }]]></Body>
+    }
+
+} else if (CFS == 7) {
+    double rand = Math.random();
+    if (rand < 0.0218) {
+        CFS = 5;
+    } else if (rand < 0.0218 + 0.0655) {
+        CFS = 6;
+    } else if (rand < 0.0218 + 0.0655 + 0.4157) {
+        CFS = 7;
+    } else if (rand < 0.0218 + 0.0655 + 0.4157 + 0.3313) {
+        CFS = 8;
+    } else {
+        CFS = 9;
+    }
+
+} else if (CFS == 8) {
+    double rand = Math.random();
+    if (rand < 0.0218) {
+        CFS = 6;
+    } else if (rand < 0.0218 + 0.0655) {
+        CFS = 7;
+    } else if (rand < 0.0218 + 0.0655 + 0.4157) {
+        CFS = 8;
+    } else {
+        CFS = 9;
+    }
+
+} else {
+    // CFS == 9, cannot worsen
+    CFS = 9;
+}
+*/
+int oldCFS = CFS;
+
+double rand = Math.random();
+
+if (rand < 0.0218) {
+    // Improve by 2+
+    CFS = Math.max(CFS - 2, 1);
+} else if (rand < 0.0218 + 0.0655) {
+    // Improve by 1
+    CFS = Math.max(CFS - 1, 1);
+} else if (rand < 0.0218 + 0.0655 + 0.4157) {
+    // Stay the same
+    CFS = CFS;
+} else if (rand < 0.0218 + 0.0655 + 0.4157 + 0.3313) {
+    // Worsen by 1
+    CFS = Math.min(CFS + 1, 9);
+} else {
+    // Worsen by 2+
+    CFS = Math.min(CFS + 2, 9);
+}
+]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -5459,45 +5863,28 @@ rehospitalizationFromOyaDay = -1;
 					<Body><![CDATA[double rand = Math.random();
     double pHospital = 0.0;
     double pHome = 0.0;
-    double pDeath = 0.0;
     double pNursingHome = 0.0;
+    double pDeathNormal = 0.0;
+    double pDeathLong = 0.0;
 
     switch (this.CFS) {
-        case 1:
-            pHospital = 0.150; pHome = 0.780; pNursingHome = 0.000; pDeath = 0.070;
-            break;
-        case 2:
-            pHospital = 0.163; pHome = 0.696; pNursingHome = 0.019; pDeath = 0.122;
-            break;
-        case 3:
-            pHospital = 0.157; pHome = 0.703; pNursingHome = 0.025; pDeath = 0.114;
-            break;
-        case 4:
-            pHospital = 0.162; pHome = 0.607; pNursingHome = 0.038; pDeath = 0.192;
-            break;
-        case 5:
-            pHospital = 0.162; pHome = 0.592; pNursingHome = 0.026; pDeath = 0.220;
-            break;
-        case 6:
-            pHospital = 0.163; pHome = 0.498; pNursingHome = 0.050; pDeath = 0.289;
-            break;
-        case 7:
-            pHospital = 0.178; pHome = 0.381; pNursingHome = 0.059; pDeath = 0.381;
-            break;
-        case 8:
-            pHospital = 0.195; pHome = 0.366; pNursingHome = 0.122; pDeath = 0.317;
-            break;
-        case 9:
-            pHospital = 0.000; pHome = 0.333; pNursingHome = 0.067; pDeath = 0.600;
-            break;
-        default:
-            return "home";
+        case 1:  pHospital = 0.150; pHome = 0.780; pNursingHome = 0.000; pDeathNormal = 0.060; pDeathLong = 0.010; break;
+        case 2:  pHospital = 0.163; pHome = 0.696; pNursingHome = 0.019; pDeathNormal = 0.122; pDeathLong = 0.000; break;
+        case 3:  pHospital = 0.157; pHome = 0.703; pNursingHome = 0.025; pDeathNormal = 0.110; pDeathLong = 0.004; break;
+        case 4:  pHospital = 0.162; pHome = 0.607; pNursingHome = 0.038; pDeathNormal = 0.171; pDeathLong = 0.022; break;
+        case 5:  pHospital = 0.162; pHome = 0.592; pNursingHome = 0.026; pDeathNormal = 0.165; pDeathLong = 0.056; break;
+        case 6:  pHospital = 0.163; pHome = 0.498; pNursingHome = 0.050; pDeathNormal = 0.163; pDeathLong = 0.126; break;
+        case 7:  pHospital = 0.178; pHome = 0.381; pNursingHome = 0.059; pDeathNormal = 0.186; pDeathLong = 0.195; break;
+        case 8:  pHospital = 0.195; pHome = 0.366; pNursingHome = 0.122; pDeathNormal = 0.195; pDeathLong = 0.122; break;
+        case 9:  pHospital = 0.000; pHome = 0.333; pNursingHome = 0.067; pDeathNormal = 0.400; pDeathLong = 0.200; break;
+        default: return "home";
     }
 
     if (rand < pHospital) return "hospital";
     else if (rand < pHospital + pHome) return "home";
     else if (rand < pHospital + pHome + pNursingHome) return "nursinghome";
-    else return "death";]]></Body>
+    else if (rand < pHospital + pHome + pNursingHome + pDeathNormal) return "death";
+    else return "long_death";]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -8302,6 +8689,24 @@ rehospitalizationFromOyaDay = -1;
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[DoDistribution]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[totalHospitalAdmissions]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[AverageHospitalAdmissions]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[logtodaystranfers]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ActivateRettHjem]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[RettHjemMultiplier]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[HalfStaytimeNursinghome]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
