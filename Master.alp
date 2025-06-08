@@ -609,7 +609,7 @@ readCSV();]]></StartupCode>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[100]]></Code>
+							<Code><![CDATA[400]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1746615452521</Id>
@@ -801,7 +801,7 @@ readCSV();]]></StartupCode>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1.5]]></Code>
+							<Code><![CDATA[0.8]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1748638295995</Id>
@@ -1179,19 +1179,33 @@ initializeHomePatients();
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[    while (!waitingList.isEmpty()) {
-        Patient waitingPatient = waitingList.peek(); // Get the next patient in the waiting list
-        
-        boolean admitted = admitPatient(waitingPatient); // Try to admit the patient
-
-        if (admitted) {
-            waitingList.poll(); // Remove the patient from the waiting list
-        } else {
-            break; // Stop processing if no beds are available
-        }
+					<Body><![CDATA[// === 1st pass: normal FIFO processing (stops at first failed admission) ===
+while (!waitingList.isEmpty()) {
+    Patient waitingPatient = waitingList.peek(); // Only look at the first in line
+    boolean admitted = admitPatient(waitingPatient);
+    
+    if (admitted) {
+        waitingList.poll(); // Remove from queue
+    } else {
+        break; // Stop the loop if first patient cannot be admitted
     }
+}
 
+// === 2nd pass: attempt to admit remaining "Long" patients to 3A/6A ===
+ArrayList<Patient> remainingLongPatients = new ArrayList<>();
 
+for (Patient p : waitingList) {
+    if (p.category.equals("Long")) {
+        remainingLongPatients.add(p);
+    }
+}
+
+for (Patient p : remainingLongPatients) {
+    boolean admitted = admitPatient(p);
+    if (admitted) {
+        waitingList.remove(p); // Only remove if actually admitted
+    }
+}
 ]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -2342,7 +2356,7 @@ trace(
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[// Multiplier to boost Poisson mean values (tune this as needed)
-    double lambdaMultiplier = 1.2;
+    double lambdaMultiplier = 1.1;
     double readmissionMultiplier=1;
     
     if (ActivateRettHjem){
@@ -2405,7 +2419,7 @@ trace(
     totalHospitalAdmissions += totalAdmittedToday;
     logtodaystranfers=totalAdmittedToday;
     if (simulatedDays>0){
-	    AverageHospitalAdmissions = totalHospitalAdmissions/simulatedDays;
+	    AverageHospitalAdmissions = (double) totalHospitalAdmissions/simulatedDays;
     }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -2548,10 +2562,10 @@ trace(
             pHome = 0.278; pWaitlist = 0.466; pDeath = 0.056;
             break;
         case 8:
-            pHome = 0.40; pWaitlist = 0.478; pDeath = 0.022;
+            pHome = 0.25; pWaitlist = 0.678; pDeath = 0.072;
             break;
         case 9:
-            pHome = 0.30; pWaitlist = 0.609; pDeath = 0.091;
+            pHome = 0.20; pWaitlist = 0.709; pDeath = 0.091;
             break;
         default:
             return "home";
@@ -5686,7 +5700,7 @@ return 6;                          // 5%  (remaining)              // 5%]]></Bod
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[  deathDay = -1;
-    rehospitalizationFromOyaDay = -1;
+  rehospitalizationFromOyaDay = -1;
 
     // Draw next step
     String exit = getOyaExit();
@@ -5908,6 +5922,12 @@ if (rand < 0.0218) {
     copy.deathDay = this.deathDay;
     copy.isDead = this.isDead;
     copy.rehospitalizationFromOyaDay = this.rehospitalizationFromOyaDay;
+    copy.assignedDepartment=this.assignedDepartment;
+    copy.MinimumLengthOfStay=this.MinimumLengthOfStay;
+    copy.hospitalDaysLeft=this.hospitalDaysLeft;
+    copy.RettHjem=this.RettHjem;
+    copy.fasterNursinghome=this.fasterNursinghome;
+    copy.HomeReadmissions30Days=this.HomeReadmissions30Days;
     return copy;]]></Body>
 				</Function>
 			</Functions>
