@@ -657,7 +657,7 @@ readCSV();]]></StartupCode>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5000]]></Code>
+							<Code><![CDATA[20000]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1746615643464</Id>
@@ -777,7 +777,7 @@ readCSV();]]></StartupCode>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1748638213740</Id>
@@ -801,7 +801,7 @@ readCSV();]]></StartupCode>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.8]]></Code>
+							<Code><![CDATA[1.5]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1748638295995</Id>
@@ -839,7 +839,7 @@ readCSV();]]></StartupCode>
 				<Variable Class="CollectionVariable">
 					<Id>1732172809812</Id>
 					<Name><![CDATA[waitingList]]></Name>
-					<X>440</X><Y>60</Y>
+					<X>460</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -902,7 +902,7 @@ readCSV();]]></StartupCode>
 				<Variable Class="CollectionVariable">
 					<Id>1732369672889</Id>
 					<Name><![CDATA[deadPatientsCollection]]></Name>
-					<X>170</X><Y>80</Y>
+					<X>310</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1019,6 +1019,186 @@ readCSV();]]></StartupCode>
 					</Properties>
 
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392391138</Id>
+					<Name><![CDATA[HomeCopy]]></Name>
+					<X>-610</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392408842</Id>
+					<Name><![CDATA[HospitalCopy]]></Name>
+					<X>-610</X><Y>600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392419020</Id>
+					<Name><![CDATA[WaitlistCopy]]></Name>
+					<X>-610</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392436650</Id>
+					<Name><![CDATA[Copy3a]]></Name>
+					<X>-730</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392476590</Id>
+					<Name><![CDATA[Copy4a]]></Name>
+					<X>-730</X><Y>600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392479325</Id>
+					<Name><![CDATA[Copy4b]]></Name>
+					<X>-730</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392482291</Id>
+					<Name><![CDATA[Copy5a]]></Name>
+					<X>-730</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392491252</Id>
+					<Name><![CDATA[Copy5b]]></Name>
+					<X>-730</X><Y>690</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392495853</Id>
+					<Name><![CDATA[Copy6a]]></Name>
+					<X>-730</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749392498786</Id>
+					<Name><![CDATA[Copy6b]]></Name>
+					<X>-730</X><Y>750</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749401101705</Id>
+					<Name><![CDATA[NormaTimeDischarged]]></Name>
+					<X>160</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1749402041847</Id>
+					<Name><![CDATA[deadPatientsHospital]]></Name>
+					<X>310</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Patient]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
 			</Variables>
 			<Events>
 				<Event>
@@ -1051,7 +1231,12 @@ readCSV();]]></StartupCode>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[  //Stop the simulation after765 days
+					<Action><![CDATA[if (simulatedDays==0 && simulations>0){
+restoreSystemStateFromSnapshot();
+simulations++;
+}
+
+  //Stop the simulation after765 days
 ///*
 if (simulations == NumberOfSimulations) { // Ensure `simulations` is incrementing properly elsewhere in the code
     runDiagnostics(); 
@@ -1061,12 +1246,14 @@ if (simulations == NumberOfSimulations) { // Ensure `simulations` is incrementin
     // Call the function to run diagnostics
 }
 
-if (simulatedDays >=LengthOfWarmUp+LengthOfSimulation) {
+
+
+if (simulatedDays >=LengthOfSimulation && simulations>0) {
     outputKPIToCollection();
-    totalReset();
+    restoreSystemStateFromSnapshot();
     return;
 }
-if (simulatedDays==0){
+if (simulatedDays==0 && simulations==0){
 initializeHomePatients();
 }
 
@@ -1133,7 +1320,8 @@ initializeHomePatients();
 
   */  
     if (simulatedDays==LengthOfWarmUp){
-    	WarmUpEnded();
+    	snapshotSystemStateAndClear();
+    	simulations++;
     }
     
 
@@ -1160,8 +1348,8 @@ initializeHomePatients();
 		        nursingHomePatients.add(patient); // original
 		    } else {
 		        homePatients.add(patient);        // original
+		        NormaTimeDischarged.add(patient.copyForDiagnostics());
 		    }
-		
 		    dischargedPatients.add(patient.copyForDiagnostics()); // kopi
 		    patientsToRemove.add(patient);       // fjern original fra avdeling
 		}
@@ -1512,7 +1700,7 @@ Department bestDepartment = null;
                 // Add to dead patients collection
                 deadPatients.add(patient);
                 deadPatientsCollection.add(patient); // Track globally
-
+                dischargedPatients.add(patient.copyForDiagnostics());
                 // Remove all remaining tasks for the patient
                 for (Task task : patient.patientTasks) {
                     removeTaskFromWorkerQueues(task);
@@ -1852,11 +2040,6 @@ for (Patient patient : new ArrayList<>(remainingLongPatients)) {
 hasBeenOnWaitingList = 0;
 
 // Step 1: Count patients with at least 1 day on waiting list from dead and discharged collections
-for (Patient patient : deadPatientsCollection) {
-    if (patient.daysAtWaitingList > 0) {
-        hasBeenOnWaitingList++;
-    }
-}
 
 for (Patient patient : dischargedPatients) {
     if (patient.daysAtWaitingList > 0) {
@@ -1870,13 +2053,12 @@ int patientCountExcludingCurrent = 0;
 int totalWaitTimeCurrent = 0;
 
 // Step 2: Calculate total wait time excluding the current waiting list
-for (Patient patient : allPatients) {
-    if (!waitingList.contains(patient)) { // Exclude current waiting list patients
+for (Patient patient : dischargedPatients) {
         if (patient.daysAtWaitingList > 0) {
             totalWaitTimeExcludingCurrent += patient.daysAtWaitingList;
             patientCountExcludingCurrent++;
         }
-    }
+    
 }
 
 // Step 3: Calculate total wait time for current waiting list patients
@@ -2161,11 +2343,11 @@ KPI kpi = new KPI(
     AverageStayLong,
     averageWaitListTime,
     hasBeenOnWaitingList,
-    allPatients.size(),
-    (double) hasBeenOnWaitingList / allPatients.size(),
+    dischargedPatients.size(),
+    (double) hasBeenOnWaitingList / dischargedPatients.size(),
     earlyDischarged.size(),
     dischargedPatients.size(),
-    (double) earlyDischarged.size() / (earlyDischarged.size() + dischargedPatients.size())
+    (double) earlyDischarged.size() /  dischargedPatients.size()
 );
 
 // Add the KPI object to the collection
@@ -2190,6 +2372,7 @@ SimulationsOutputs.add(kpi);]]></Body>
     homePatients.clear();       
 	hospitalPatients.clear();     
 	nursingHomePatients.clear(); 
+	rehospitalFromOya.clear();
 
     // Reset departments
     for (Department department : departments) {
@@ -2223,13 +2406,14 @@ SimulationsOutputs.add(kpi);]]></Body>
     AverageStayMedium = 0.0;
     AverageStayLong = 0.0;
     averageWaitListTime = 0.0;
-    simulations++;
+    //simulations++;
     totalHospitalAdmissions=0;
-
+/*
     // Reinitialize departments, beds, and CSV reading
     initializeDepartments();
     maxBeds = departments.stream().mapToInt(d -> d.numBeds).sum();
-    readCSV();]]></Body>
+    readCSV();
+    */]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -2242,12 +2426,14 @@ SimulationsOutputs.add(kpi);]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[// Initialize cumulative values
+    double totalStays = 0.0;
     double totalShortAvg = 0.0, totalNormalAvg = 0.0, totalLongAvg = 0.0;
     double totalWaitlistAvg = 0.0, totalPercentageHasBeenOnWaitlist = 0.0;
     double totalEarlyDischarged = 0.0, totalDischarged = 0.0, totalPercentageDischargedEarly = 0.0;
     int totalHasBeenOnWaitlist = 0, totalPatients = 0;
 
     // Auxiliary for Standard Deviation
+    double sqDiffStays = 0.0;
     double sqDiffShort = 0.0, sqDiffNormal = 0.0, sqDiffLong = 0.0;
     double sqDiffWaitlist = 0.0, sqDiffPercentageWaitlist = 0.0;
     double sqDiffEarlyDischarged = 0.0, sqDiffDischarged = 0.0, sqDiffPercentageEarly = 0.0;
@@ -2256,6 +2442,7 @@ SimulationsOutputs.add(kpi);]]></Body>
 
     // Loop through SimulationsOutputs to calculate totals
     for (KPI kpi : SimulationsOutputs) {
+    	totalStays+= kpi.getTotalPatients();
         totalShortAvg += kpi.getAverageStayShort();
         totalNormalAvg += kpi.getAverageStayMedium();
         totalLongAvg += kpi.getAverageStayLong();
@@ -2269,6 +2456,7 @@ SimulationsOutputs.add(kpi);]]></Body>
     }
 
     // Calculate averages
+    double avgStays = totalStays/n;
     double avgShort = totalShortAvg / n;
     double avgNormal = totalNormalAvg / n;
     double avgLong = totalLongAvg / n;
@@ -2280,6 +2468,7 @@ SimulationsOutputs.add(kpi);]]></Body>
 
     // Second pass for standard deviation
     for (KPI kpi : SimulationsOutputs) {
+    	sqDiffStays += Math.pow(kpi.getTotalPatients()-avgStays,2);
         sqDiffShort += Math.pow(kpi.getAverageStayShort() - avgShort, 2);
         sqDiffNormal += Math.pow(kpi.getAverageStayMedium() - avgNormal, 2);
         sqDiffLong += Math.pow(kpi.getAverageStayLong() - avgLong, 2);
@@ -2289,7 +2478,7 @@ SimulationsOutputs.add(kpi);]]></Body>
         sqDiffDischarged += Math.pow(kpi.getDischargedPatientsCount() - avgDischarged, 2);
         sqDiffPercentageEarly += Math.pow(kpi.getPercentageDischargedEarly() - avgPercentageEarly, 2);
     }
-
+	double sdStays = Math.sqrt(sqDiffStays /n);
     double sdShort = Math.sqrt(sqDiffShort / n);
     double sdNormal = Math.sqrt(sqDiffNormal / n);
     double sdLong = Math.sqrt(sqDiffLong / n);
@@ -2301,6 +2490,7 @@ SimulationsOutputs.add(kpi);]]></Body>
 
     // Margin of Error
     double z = 1.96; // 95% confidence level
+    double moeStays = z * (sdStays/Math.sqrt(n)); 
     double moeShort = z * (sdShort / Math.sqrt(n));
     double moeNormal = z * (sdNormal / Math.sqrt(n));
     double moeLong = z * (sdLong / Math.sqrt(n));
@@ -2312,13 +2502,13 @@ SimulationsOutputs.add(kpi);]]></Body>
 
     // Output to trace
 trace(
-    "Average," + avgShort + "," + avgNormal + "," + avgLong + "," + avgWaitlist + "," +
+    "Average," + avgStays + ","+ avgShort + "," + avgNormal + "," + avgLong + "," + avgWaitlist + "," +
     avgPercentageWaitlist + "," + avgEarlyDischarged + "," + avgDischarged + "," +
     avgPercentageEarly + "\n" +
-    "SD," + sdShort + "," + sdNormal + "," + sdLong + "," + sdWaitlist + "," +
+    "SD," + sdStays + ","+ sdShort + "," + sdNormal + "," + sdLong + "," + sdWaitlist + "," +
     sdPercentageWaitlist + "," + sdEarlyDischarged + "," + sdDischarged + "," +
     sdPercentageEarly + "\n" +
-    "Margin of e," + moeShort + "," + moeNormal + "," + moeLong + "," + moeWaitlist + "," +
+    "Margin of e," + moeStays + ","+ moeShort + "," + moeNormal + "," + moeLong + "," + moeWaitlist + "," +
     moePercentageWaitlist + "," + moeEarlyDischarged + "," + moeDischarged + "," +
     moePercentageEarly + "\n"
 );]]></Body>
@@ -2341,8 +2531,8 @@ trace(
         p.fasterNursinghome=HalfStaytimeNursinghome;
         p.patientID = allPatients.size();
         p.assignInitialCFS();
-        allPatients.add(p);
         homePatients.add(p);
+        allPatients.add(p);
     }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -2450,7 +2640,7 @@ trace(
         switch (exit) {
             case "death":
                 patient.isDead = true;
-                deadPatientsCollection.add(patient);
+                deadPatientsHospital.add(patient);
                 break;
 
             case "home":
@@ -2495,6 +2685,7 @@ trace(
         department.patients.remove(p);
         hospitalPatients.add(p);
         rehospitalFromOya.add(p.copyForDiagnostics());
+        dischargedPatients.add(patient.copyForDiagnostics());
         p.hospitalDaysLeft = (int) Math.round(generateTriangular(1, 3, 10));
         p.rehospitalizationFromOyaDay = -1;
         p.DaysAtOya = 0;
@@ -2592,8 +2783,8 @@ trace(
         p.fasterNursinghome=HalfStaytimeNursinghome;
         p.patientID = allPatients.size(); // Enkelt ID-system
         p.assignInitialCFS();
-        allPatients.add(p);
         homePatients.add(p);
+        allPatients.add(p);
     }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -2690,6 +2881,156 @@ trace(
     } while (p > L);
 
     return k - 1;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1749392928487</Id>
+					<Name><![CDATA[snapshotSystemStateAndClear]]></Name>
+					<X>-610</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[// Clear existing snapshots
+    HomeCopy.clear();
+    HospitalCopy.clear();
+    WaitlistCopy.clear();
+    Copy3a.clear();
+    Copy4a.clear();
+    Copy4b.clear();
+    Copy5a.clear();
+    Copy5b.clear();
+    Copy6a.clear();
+    Copy6b.clear();
+
+    // Snapshot home patients
+    for (Patient p : homePatients) {
+        HomeCopy.add(p.copyForWarmup());
+    }
+
+    // Snapshot hospital patients
+    for (Patient p : hospitalPatients) {
+        HospitalCopy.add(p.copyForDiagnostics());
+    }
+
+    // Snapshot waiting list
+    for (Patient p : waitingList) {
+        WaitlistCopy.add(p.copyForDiagnostics());
+    }
+
+    // Snapshot departments
+    for (Department d : departments) {
+        for (Patient p : d.patients) {
+            Patient copy = p.copyForDiagnostics();
+            switch (d.name) {
+                case "3A": Copy3a.add(copy); break;
+                case "4A": Copy4a.add(copy); break;
+                case "4B": Copy4b.add(copy); break;
+                case "5A": Copy5a.add(copy); break;
+                case "5B": Copy5b.add(copy); break;
+                case "6A": Copy6a.add(copy); break;
+                case "6B": Copy6b.add(copy); break;
+            }
+        }
+    }
+
+    // === CLEAR ALL PATIENT LOCATIONS ===
+
+    homePatients.clear();
+    hospitalPatients.clear();
+    waitingList.clear();
+    for (Department d : departments) {
+        d.patients.clear();
+    }
+
+    // === Clear tracking collections ===
+    dischargedPatients.clear();
+    earlyDischarged.clear();
+    deadPatientsCollection.clear();
+    rehospitalFromOya.clear();
+
+    // Recalculate allPatients from cleared state (to be rebuilt later)
+    allPatients.clear();
+
+    // For consistency we can keep this logic
+    // This step isn’t needed now but could be repopulated from snapshots if desired
+    hasBeenOnWaitingList = 0;
+    totalReset();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1749393052755</Id>
+					<Name><![CDATA[restoreSystemStateFromSnapshot]]></Name>
+					<X>-610</X><Y>710</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[totalReset();
+
+// === Clear current state before restoring ===
+    homePatients.clear();
+    hospitalPatients.clear();
+    waitingList.clear();
+    NormaTimeDischarged.clear();
+    deadPatientsHospital.clear();
+    for (Department d : departments) {
+        d.patients.clear();
+    }
+    allPatients.clear();
+
+    // === Restore Home ===
+    for (Patient original : HomeCopy) {
+        Patient copy = original.copyForWarmup();
+        homePatients.add(copy);
+        allPatients.add(copy);
+    }
+
+    // === Restore Hospital ===
+    for (Patient original : HospitalCopy) {
+        Patient copy = original.copyForDiagnostics();
+        hospitalPatients.add(copy);
+        allPatients.add(copy);
+    }
+
+    // === Restore Waitlist ===
+    for (Patient original : WaitlistCopy) {
+        Patient copy = original.copyForDiagnostics();
+        waitingList.add(copy);
+        allPatients.add(copy);
+    }
+
+    // === Restore Departments ===
+    for (Department d : departments) {
+        List<Patient> source = null;
+
+        switch (d.name) {
+            case "3A": source = Copy3a; break;
+            case "4A": source = Copy4a; break;
+            case "4B": source = Copy4b; break;
+            case "5A": source = Copy5a; break;
+            case "5B": source = Copy5b; break;
+            case "6A": source = Copy6a; break;
+            case "6B": source = Copy6b; break;
+        }
+
+        if (source != null) {
+            for (Patient original : source) {
+                Patient copy = original.copyForDiagnostics();
+                copy.assignedDepartment = d;  // Re-link department
+                d.patients.add(copy);
+                allPatients.add(copy);
+            }
+        }
+    }
+
+    // === Recalculate hasBeenOnWaitingList ===
+    hasBeenOnWaitingList = 0;
+    for (Patient p : allPatients) {
+        if (p.daysAtWaitingList > 0) hasBeenOnWaitingList++;
+    }]]></Body>
 				</Function>
 			</Functions>
 			<Connectivity>
@@ -3399,8 +3740,8 @@ trace(
 						<PointStyle>NONE</PointStyle>
 						<LineWidth>1.0</LineWidth>
 					</DatasetExpression>
-					<SamplesToKeep>365</SamplesToKeep>
-					<TimeWindowExpression><![CDATA[365]]></TimeWindowExpression>
+					<SamplesToKeep>20000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[20000]]></TimeWindowExpression>
 					<FillAreaUnderLine>false</FillAreaUnderLine>
 					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
     			</TimePlot>
@@ -5919,6 +6260,36 @@ if (rand < 0.0218) {
     copy.daysAtWaitingList = this.daysAtWaitingList;
     copy.hospitalStays = this.hospitalStays;
     copy.oyaStays = this.oyaStays;
+    copy.deathDay = this.deathDay;
+    copy.isDead = this.isDead;
+    copy.rehospitalizationFromOyaDay = this.rehospitalizationFromOyaDay;
+    copy.assignedDepartment=this.assignedDepartment;
+    copy.MinimumLengthOfStay=this.MinimumLengthOfStay;
+    copy.hospitalDaysLeft=this.hospitalDaysLeft;
+    copy.RettHjem=this.RettHjem;
+    copy.fasterNursinghome=this.fasterNursinghome;
+    copy.HomeReadmissions30Days=this.HomeReadmissions30Days;
+    return copy;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[Patient]]></ReturnType>
+					<Id>1749394835589</Id>
+					<Name><![CDATA[copyForWarmup]]></Name>
+					<X>540</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[Patient copy = new Patient();
+    copy.patientID = this.patientID;
+    copy.category = this.category;
+    copy.CFS = this.CFS;
+    copy.DaysAtOya = this.DaysAtOya;
+    copy.safeStay = this.safeStay;
+    copy.daysAtWaitingList = 0;
+    copy.hospitalStays = 0;
+    copy.oyaStays = 0;
     copy.deathDay = this.deathDay;
     copy.isDead = this.isDead;
     copy.rehospitalizationFromOyaDay = this.rehospitalizationFromOyaDay;
