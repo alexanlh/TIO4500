@@ -518,6 +518,106 @@ def analyze_hospital_outcomes_by_decile(
 
     return result_df
 
+
+# New function: analyze_adl_development_matrix
+def analyze_adl_development_matrix(
+    adl_path="Øya_2_ADL.csv",
+    hospital_path="Øya_2_hospitalencounters.csv",
+    decisions_path="Øya_decisions.csv",
+    measurement_name="R HP COCM IPLOS/ADL TOTAL VANLIG GJENNOMSNITT",
+):
+    import numpy as np
+
+    # Load data
+    adl_df = pd.read_csv(adl_path)
+    enc_df = pd.read_csv(hospital_path)
+    dec_df = pd.read_csv(decisions_path)
+
+    # Preprocess ADL
+    adl_df = adl_df[adl_df["PatientPseudoKey"] != 2384]
+    adl_df = adl_df[adl_df["MeasurementName"] == measurement_name]
+    adl_df["MeasurementTime"] = pd.to_datetime(adl_df["MeasurementTime"], errors="coerce")
+    adl_df["Value"] = pd.to_numeric(adl_df["Value"], errors="coerce")
+    adl_df = adl_df.dropna(subset=["MeasurementTime", "Value"])
+
+    # Preprocess hospital encounters
+    enc_df = enc_df[enc_df["PatientPseudoKey"] != 2384]
+    enc_df = enc_df[enc_df["AdmissionSource"] == "Bosted/arbeidsted"]
+    enc_df["EncounterEnd"] = pd.to_datetime(enc_df["EncounterEnd"], errors="coerce")
+    enc_df = enc_df.dropna(subset=["EncounterEnd"])
+
+    # Exclude long-term patients
+    dec_df = dec_df[
+        (dec_df["DecisionStatus"] == "Signert") &
+        (dec_df["DecisionTemplate"] == "Vedtak om langtidsopphold i institusjon")
+    ]
+    dec_df["DecisionValidDate"] = pd.to_datetime(dec_df["DecisionValidDate"], format="%d/%m/%Y", errors="coerce")
+    enc_df["EncounterEndDateOnly"] = enc_df["EncounterEnd"].dt.date
+    merged = pd.merge(
+        enc_df[["PatientPseudoKey", "EncounterEndDateOnly"]],
+        dec_df[["PatientPseudoKey", "DecisionValidDate"]],
+        on="PatientPseudoKey",
+        how="left"
+    )
+    merged = merged.dropna(subset=["DecisionValidDate"])
+    merged["DecisionValidDate"] = pd.to_datetime(merged["DecisionValidDate"]).dt.date
+    merged["FlagExclude"] = merged["DecisionValidDate"] <= merged["EncounterEndDateOnly"]
+    patients_to_exclude = set(merged[merged["FlagExclude"]]["PatientPseudoKey"])
+    enc_df = enc_df[~enc_df["PatientPseudoKey"].isin(patients_to_exclude)].drop(columns=["EncounterEndDateOnly"])
+
+    # Build deciles
+    adl_df["Decile"] = pd.cut(adl_df["Value"], 9, labels=False)
+
+    # Init matrix
+    matrix = np.zeros((9, 9), dtype=int)
+    skipped = 0
+
+    # Group by patient
+    for pid, group in enc_df.groupby("PatientPseudoKey"):
+        sorted_encounters = group.sort_values("EncounterEnd")
+        if len(sorted_encounters) < 2:
+            continue
+
+        for i in range(len(sorted_encounters) - 1):
+            row1 = sorted_encounters.iloc[i]
+            row2 = sorted_encounters.iloc[i + 1]
+
+            # Get closest ADL within ±30 days
+            adl1 = adl_df[(adl_df["PatientPseudoKey"] == pid) &
+                          (adl_df["MeasurementTime"] >= row1["EncounterEnd"] - pd.Timedelta(days=30)) &
+                          (adl_df["MeasurementTime"] <= row1["EncounterEnd"] + pd.Timedelta(days=30))]
+
+            adl2 = adl_df[(adl_df["PatientPseudoKey"] == pid) &
+                          (adl_df["MeasurementTime"] >= row2["EncounterEnd"] - pd.Timedelta(days=30)) &
+                          (adl_df["MeasurementTime"] <= row2["EncounterEnd"] + pd.Timedelta(days=30))]
+
+            if adl1.empty or adl2.empty:
+                skipped += 1
+                continue
+
+            closest1 = adl1.loc[(adl1["MeasurementTime"] - row1["EncounterEnd"]).abs().idxmin()]
+            closest2 = adl2.loc[(adl2["MeasurementTime"] - row2["EncounterEnd"]).abs().idxmin()]
+
+            if closest1["MeasurementTime"] == closest2["MeasurementTime"]:
+                skipped += 1
+                continue
+
+            from_decile = int(closest1["Decile"])
+            to_decile = int(closest2["Decile"])
+            matrix[from_decile, to_decile] += 1
+
+    # Output
+    matrix_df = pd.DataFrame(matrix, columns=[f"To_{i}" for i in range(9)], index=[f"From_{i}" for i in range(9)])
+    print("\n📈 ADL Development Matrix (hospital stay to stay):")
+    print(matrix_df)
+    # Calculate row-wise percentages
+    percentage_matrix = matrix / matrix.sum(axis=1, keepdims=True)
+    percentage_df = pd.DataFrame((percentage_matrix * 100).round(1), columns=[f"To_{i}" for i in range(9)], index=[f"From_{i}" for i in range(9)])
+    print("\n📊 ADL Development Matrix (% transitions row-wise):")
+    print(percentage_df)
+    print(f"\n⚠️ Skipped transitions due to missing or duplicate measurements: {skipped}")
+    return matrix_df
+
 if __name__ == "__main__":
     
     #summary = analyze_cfs_outcomes()
@@ -530,4 +630,5 @@ if __name__ == "__main__":
     
     analyze_adl_outcomes_by_decile()
     analyze_hospital_outcomes_by_decile()
+    analyze_adl_development_matrix()
     # Uncomment the following line to save the summary to a CSV files

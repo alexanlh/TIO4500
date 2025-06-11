@@ -231,9 +231,35 @@ def analyze_daily_admissions_byCFS(
             stats_ = results[decile][adm_type]
             print(f"  {adm_type}: Min={stats_['Minimum']}, Max={stats_['Maximum']}, Avg={stats_['Average']}, Mode={stats_['Mode']}, Total={stats_['TotalAdmissions']}")
 
+def analyze_initial_adl_distribution(
+    adl_path="Øya_2_ADL.csv",
+    measurement_name="R HP COCM IPLOS/ADL TOTAL VANLIG GJENNOMSNITT"
+):
+    adl_df = pd.read_csv(adl_path)
+
+    # Filter out test patient and invalid entries
+    adl_df = adl_df[adl_df["PatientPseudoKey"] != 2384]
+    adl_df = adl_df[adl_df["MeasurementName"] == measurement_name]
+    adl_df["MeasurementTime"] = pd.to_datetime(adl_df["MeasurementTime"], errors="coerce")
+    adl_df = adl_df.dropna(subset=["MeasurementTime", "Value"])
+    adl_df["Value"] = pd.to_numeric(adl_df["Value"], errors="coerce")
+    adl_df = adl_df.dropna(subset=["Value"])
+
+    # Find earliest measurement for each patient
+    earliest = adl_df.sort_values("MeasurementTime").groupby("PatientPseudoKey").first().reset_index()
+
+    # Create 9 equal-width bins
+    earliest["DecileLabel"] = pd.cut(earliest["Value"], 9).astype(str)
+    counts = earliest["DecileLabel"].value_counts().sort_index()
+
+    print("📊 Initial ADL decile distribution (based on earliest measurement):")
+    for label, count in counts.items():
+        print(f"  {label}: {count} patients")
+
 
 if __name__ == "__main__":
     analyze_daily_admissions()
     count_unique_patients()
     analyze_daily_deaths()
     analyze_daily_admissions_byCFS()
+    analyze_initial_adl_distribution()

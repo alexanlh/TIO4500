@@ -1,10 +1,8 @@
 import pandas as pd
-from Oya_encounters import load_and_filter_encounters, get_last_encounter_per_patient  # just as example import from shared utils
+from Oya_encounters import load_and_filter_encounters, get_last_encounter_per_patient  
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import fpgrowth
 
-# We don't need a class unless we want to encapsulate state or share configuration
-# For now, functions are sufficient and more flexible
 
 def load_and_filter_decisions(file_path="\u00d8ya_decisions.csv"):
     # Load CSV
